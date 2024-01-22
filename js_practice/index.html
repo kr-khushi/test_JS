@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        function myfunction(){
+            alert("Hello!!!")
+            console.log("hello")
+        }
+        function myPrint(){
+            print()
+        }
+    </script>
+    <script src="index.js"></script>
+</head>
+<body>
+    <h1>Java Script Practice</h1>
+    <p>Js change the content</p>
+    <p id="color">red</p>
+    <button onclick="document.getElementById('color').innerHTML = 'Blue'">Click me to blue</button>
+    <button onclick="document.getElementById('color').innerHTML='red'">Click me to red</button>
+
+    <p>JavaScript can change HTML attribute values.</p>
+    <button onclick="document.getElementById('myImg').src='https://www.shutterstock.com/image-vector/light-blub-vector-electric-inside-260nw-1751062736.jpg'">Trun on blub</button>
+    <img id="myImg" src="https://t4.ftcdn.net/jpg/00/65/99/07/360_F_65990706_FBp2ATNdBp33AAJP8krVXlhi7iFWiZho.jpg" height="100px" width="100px">
+    <button onclick="document.getElementById('myImg').src='https://t4.ftcdn.net/jpg/00/65/99/07/360_F_65990706_FBp2ATNdBp33AAJP8krVXlhi7iFWiZho.jpg'">Trun off blub</button>
+
+    <p>Js also change the style of element</p>
+    <button onclick="document.getElementById('myImg').style.height='200px'">Click me to change the size of the blub-height</button>
+    <button onclick="document.getElementById('myImg').style.width='200px'">Click me to change the size of the blub-width</button>
+
+    <p>alert message</p>
+    <button onclick="myfunction()">show alert msg</button>
+
+    <p>to print the current window content use print()</p>
+    <button onclick="myPrint()">Print Page</button>
+
+    <p>Use external script function</p>
+    <p id="product" onmouseover="myProduct()">    ---------> Mouse Over try it</p>
+
+
+
+
+</body>
+</html>
