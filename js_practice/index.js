@@ -1,4 +1,6 @@
 
+
+
 function myProduct( ){
     let x = 3*4;
     document.getElementById("product").innerHTML = "the product of 3 & 4 is " +  x  +" .";
@@ -317,3 +319,239 @@ const result = [...n1, ...n3];
 const result1 = [...n1,...n2,...n3];
 console.log(result)
 console.log(result1)
+
+
+//Date object
+const date = new Date(0);
+console.log(date)
+
+var dates = new Date(100000000000);
+console.log(dates)
+
+dates = new Date();
+console.log(dates.toDateString())
+console.log(dates.toUTCString())
+console.log(dates.toISOString())
+
+const date1 = new Date("2024");
+console.log(date1)
+
+dates = new Date("03/25/2015")
+console.log(dates)
+
+
+//Date.parse() give the milisecond between the date and January 1, 1970
+var msc = Date.parse("Jan 21 2024")
+console.log(msc)
+
+dates = new Date(msc);
+console.log(dates)
+
+const date3 = new Date();
+console.log(date3)
+
+var msc1 = Date.parse(date3);
+console.log(msc1);
+
+const date4 = new Date(msc1);
+console.log(date4)
+
+
+//get method is used to get Date, month, year, hour, second, minutes
+console.log(date4.getDate())
+console.log(date4.getFullYear())
+console.log(date4.getDay())
+console.log(date4.getHours())
+console.log(date4.getMinutes())
+console.log(date4)
+
+
+//getTimezoneOffest gives the difference between the local time and UTC time
+let diff = date4.getTimezoneOffset()
+console.log(diff)
+
+//set method is used to set the dates
+const new_date = new Date();
+new_date.setDate(22)
+new_date.setFullYear(2024)
+new_date.setMonth(0)
+console.log(new_date)
+
+
+//Random no 
+function myRandomNo(){
+    document.getElementById("randomno").innerHTML = Math.random();
+}
+
+
+//for in loop
+var person1 = {
+    fname: "John",
+    lname: "Doe",
+    age: 25
+}
+text = "";
+for (let x in person1){
+    text += person1[x] + "\n";
+}
+console.log(text)
+
+
+car1 = ["BMW", "Volvo", "Mini"];
+for(let x of car1){
+    text += x + " "
+}
+console.log(text)
+
+
+
+//set
+const set = new Set();
+set.add(1)
+set.add(2);
+set.add(3);
+set.add(4);
+set.add(5);
+console.log(set)
+
+set.forEach(function(value){
+    console.log(value)
+})
+
+console.log(set.values())
+
+//iterate using values
+console.log("values")
+for(const x of set.values()){
+    console.log(x)
+}
+
+set.delete(5);
+console.log(set)
+console.log(set.has(4))
+console.log(set.size)
+
+
+
+//map function
+var map = new Map();
+map.set("apple", 10)
+map.set("banana",8)
+map.set("kiwi", 5)
+map.set("orange",8)
+
+console.log(map)
+console.log(map.size)
+console.log(map.has("apple"))
+console.log(map.get("kiwi"))
+console.log(map.delete("apple"))
+
+map.forEach(function(value, key){
+    console.log(value + " " + key)
+})
+
+text = ""
+for(const x of map.entries()){
+    text += x  + "\n";
+}
+console.log("==============")
+console.log(text)
+
+
+
+//type conversion
+//string to number
+console.log(Math.PI)
+console.log("3.14")
+console.log( " ")
+
+console.log(parseInt("99.09 98"))
+console.log(parseFloat("990.09 98"))
+
+//string and toString used t convert the number to string
+console.log(String(98))
+console.log((76).toString())
+
+//dates to number same work as the getTime
+const t = new Date()
+console.log(Number(t))
+console.log(t.getTime())
+
+//dates to string
+console.log(String(t))
+console.log(t.toString())
+
+
+
+//error 
+//try-catch-finally
+
+let val = 10;
+let val2 = 0;
+try{
+    alert(hello)
+}
+catch(err){
+    console.log(err.name)
+    console.log(err.message)
+}
+finally{
+    console.log("Final block")
+}
+
+
+
+let x = this;
+console.log(x)
+
+
+//arrow function
+hello = () => {
+    console.log("hello, world!")
+}
+
+sum = (a,b) => {
+    return a + b;
+}
+
+const total = sum(5,6)
+console.log(total)
+
+
+
+//class
+class car {
+    constructor(name, year){
+        this.name = name;
+        this.year = year;
+    }
+    age(){
+        const date = new Date()
+        return date.getFullYear() - this.year;
+    }
+}
+
+const mycar = new car("BMW", 2017);
+console.log(mycar.age());
+
+
+
+//JSON
+let text5 = {
+    "employees":[
+        {"firstName":"John", "lastName":"Doe"},
+        {"firstName":"Anna", "lastName":"Smith"},
+        {"firstName":"Peter", "lastName":"Jones"}
+      ]
+}
+
+console.log(text5)
+
+//convert JSON text into js object
+let obj = '{ "employees" : [' +
+'{ "firstName":"John" , "lastName":"Doe" },' +
+'{ "firstName":"Anna" , "lastName":"Smith" },' +
+'{ "firstName":"Peter" , "lastName":"Jones" } ]}';
+
+var obj1 = JSON.parse(obj)
+console.log(obj1.employees[1].firstName + "   " + obj1.employees[1].lastName)

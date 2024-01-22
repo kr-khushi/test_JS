@@ -15,6 +15,18 @@
         }
     </script>
     <script src="index.js"></script>
+    <script type="module">
+        import message from './message.js'
+
+        document.getElementById("import").innerHTML = message()
+    </script>
+
+    <script type="module">
+        import {name, age} from './message.js';
+
+        document.getElementById("export").innerHTML = name + " age is : " + age;
+    </script>
+
 </head>
 <body>
     <h1>Java Script Practice</h1>
@@ -42,7 +54,14 @@
     <p id="product" onmouseover="myProduct()">    ---------> Mouse Over try it</p>
 
 
+    <p>Random number:</p>
+    <p id="randomno"></p>
+    <button onclick="myRandomNo()">Random No</button>
 
+
+    <p>Import & export test</p>
+    <p id="import"></p>
+    <p id="export"></p>
 
 </body>
 </html>
