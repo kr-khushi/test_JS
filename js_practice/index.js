@@ -555,3 +555,67 @@ let obj = '{ "employees" : [' +
 
 var obj1 = JSON.parse(obj)
 console.log(obj1.employees[1].firstName + "   " + obj1.employees[1].lastName)
+
+
+var person2 = {
+    fname: "John",
+    lname: "Doe",
+    language: "No"
+}
+
+//change object property
+Object.defineProperty(person2, "language", {
+    get: function(){
+        return language;
+    },
+
+    set: function(value){
+        language = value.toUpperCase();
+    }
+})
+
+person2.language = 'hello';
+console.log(person2.language)
+
+
+//bind method can borrow a method of another object
+const person3 = {
+    fname: "john",
+    lname: "doe",
+    fullname : function(){
+        return this.fname + " " + this.lname;
+    }
+}
+
+const member = {
+    fname: "Hege",
+    lname: "Nilson"
+}
+
+console.log(person3.fullname.bind(member)())
+
+
+
+//promise
+const myPromise = new Promise(function(mySuccess, myError){
+    setTimeout(function(){
+        mySuccess("Helllllllllllllo!!!!")
+    }, 3000)
+})
+
+myPromise.then(function(value){
+    console.log(value)
+})
+
+
+const myPromise1 = new Promise(function(mySuccess, myError){
+    setTimeout(function(){
+        mySuccess("Hello from the another promise")
+    },2000)
+})
+
+Promise.any([myPromise, myPromise1]).then((x) =>{
+    console.log(x)
+})
+
+
